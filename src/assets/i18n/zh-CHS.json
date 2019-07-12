@@ -1,5 +1,5 @@
 {
-	"appBrand": "Gs GitHub 发行统计",
+	"appBrand": "GitHub Release Stats",
 	"downloads": "下载数",
 	"lastUpdated": "最后更新",
 	"noReleaseAvailable": "此repository无可用发行。",
@@ -8,7 +8,7 @@
 	"releasedAssets": "发行文件",
 	"releasedBy": "发行者",
 	"search": "搜索",
-	"signIn": "登录 - 可储存您的GitHub用户名",
+	"signIn": "登录 以储存您的用户名",
 	"signOut": "退出",
 	"username": "用户名",
 	"usernamePlaceholder": "访客"

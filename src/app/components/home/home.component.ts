@@ -41,14 +41,14 @@ export class HomeComponent implements OnInit {
         )
     } else {
       var loadedGithubUsername = localStorage.getItem('githubUsername');
-      this.githubUsername = loadedGithubUsername ? loadedGithubUsername : '';
+      this.githubUsername = loadedGithubUsername ? loadedGithubUsername.trim() : '';
       this.usernameChanged();
     }
   }
 
   saveGithubUsername() {
     if (this.sessionService.token) {
-      this.apiService.put('githubUsername', this.sessionService.token, {githubUsername: this.githubUsername})
+      this.apiService.put('githubUsername', this.sessionService.token, {githubUsername: this.githubUsername.trim()})
         .subscribe(
           response => {
             if (response.success) {
@@ -62,7 +62,7 @@ export class HomeComponent implements OnInit {
           }
         )
     } else {
-      localStorage.setItem('githubUsername', this.githubUsername);
+      localStorage.setItem('githubUsername', this.githubUsername.trim());
     }
   }
 
@@ -71,13 +71,13 @@ export class HomeComponent implements OnInit {
     if (this.githubUsername) {
       this.saveGithubUsername();
       this.gettingRepositoryStats = true;
-      this.httpClient.get<object[]>(`https://api.github.com/users/${this.githubUsername}/repos`)
+      this.httpClient.get<object[]>(`https://api.github.com/users/${this.githubUsername.trim()}/repos`)
         .subscribe(
           response => {
             this.currentUserRepo = response;
           },
           error => {
-            alert('Username not found');
+            // alert('Username not found');
           },
           () => {
             this.gettingRepositoryList = false;
@@ -98,7 +98,7 @@ export class HomeComponent implements OnInit {
   repoInfo: object = {};
   getRepoInfo(repo: string): void {
     this.gettingRepositoryStats = true;
-    this.httpClient.get<object[]>(`https://api.github.com/repos/${this.githubUsername}/${repo}/releases`)
+    this.httpClient.get<object[]>(`https://api.github.com/repos/${this.githubUsername.trim()}/${repo}/releases`)
       .subscribe(
         response => {
           this.currentRepoReleases = response;

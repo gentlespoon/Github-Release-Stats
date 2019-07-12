@@ -1,5 +1,5 @@
 {
-	"appBrand": "Gs GitHub Release Statistics",
+	"appBrand": "GitHub Release Stats",
 	"downloads": "Downloads",
 	"lastUpdated": "Last Updated",
 	"noReleaseAvailable": "No release available for this repository.",
@@ -8,7 +8,7 @@
 	"releasedAssets": "Released Assets",
 	"releasedBy": "Released by",
 	"search": "Search",
-	"signIn": "Sign In - for saving your GitHub username",
+	"signIn": "Sign In to save username",
 	"signOut": "Sign Out",
 	"username": "Username",
 	"usernamePlaceholder": "Anonymous"

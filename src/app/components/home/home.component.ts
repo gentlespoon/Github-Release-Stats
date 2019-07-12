@@ -77,6 +77,7 @@ export class HomeComponent implements OnInit {
             this.currentUserRepo = response;
           },
           error => {
+            this.currentUserRepo = [];
             // alert('Username not found');
           },
           () => {

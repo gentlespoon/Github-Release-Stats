@@ -1,0 +1,3 @@
+<select class="select-language" #languageSelection (change)="translationService.useLanguage(languageSelection.value)">
+  <option *ngFor="let lang of Object.keys(translationService.languages)" value="{{lang}}" [selected]="lang === translationService.language">{{ translationService.languages[lang] }}</option>
+</select>

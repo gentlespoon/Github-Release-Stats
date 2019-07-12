@@ -1,0 +1,196 @@
+/* For large screens */
+@media only screen and (min-width: 801px)  {
+  .sideBar {
+    display: inline-block;
+    width: 350px;
+  }
+
+  .userName {
+    text-align: center;
+    padding: 25px;
+    border-bottom: 1px solid lightgray;
+    height: 165px;
+  }
+
+  .userName i.fab {
+    font-size: 70px;
+    margin-bottom: 10px;
+  }
+
+  input.githubUsername {
+    font-size: 25px;
+  }
+
+  .repository {
+    height: calc(100% - 165px);
+  }
+
+  .repositoryTitle {
+    display: none;
+  }
+
+  .repoFilterContainer {
+    padding: 25px;
+  }
+
+  input.repoFilter {
+    font-size: 18px;
+    height: 25px;
+    line-height: 25px;
+  }
+
+  .repoInfo {
+    display: inline-block;
+    position: absolute;
+    left: 350px;
+    width: calc(100% - 350px);
+  }
+
+  .repositoryList {
+    height: calc(100% - 75px);
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+  
+}
+
+/* For phone portrait */
+@media only screen and (max-width: 800px)  {
+  .sideBar {
+    display: block;
+    position: fixed;
+    top: 50px;
+    width: 50px;
+  }
+  .sideBar:hover {
+    width: 350px;
+  }
+
+  input.githubUsername {
+    display: none;
+  }
+  .sideBar:hover input.githubUsername {
+    display: block !important;
+  }
+
+  .userName {
+    height: 80px;
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid lightgray;
+  }
+
+  .userName i.fab {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+
+  .repository {
+    height: calc(100% - 80px);
+  }
+  .repositoryTitle {
+    text-align: center;
+    padding: 10px;
+  }
+  .repositoryTitle i.fas {
+    font-size: 30px;
+  }
+  .sideBar:hover .repositoryTitle {
+    display: none;
+  }
+
+  .repositoryList {
+    display: none;
+    height: calc(100% - 40px);
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+  .sideBar:hover .repositoryList {
+    display: block;
+  }
+
+
+  .repoFilterContainer {
+    padding: 10px;
+  }
+
+  .repoInfo {
+    position: absolute;
+    left: 50px;
+    width: calc(100% - 50px);
+  }
+
+  input.repoFilter {
+    display: none;
+  }
+
+  .sideBar:hover input.repoFilter {
+    display: block;
+  }
+
+
+}
+
+
+.sideBar {
+  position: fixed;
+  top: 50px;
+  z-index: 5;
+  height: calc(100vh - 80px);
+  background-color: #eee;
+  border-right: 1px solid lightgray;
+}
+
+
+input {
+  width: 100%;
+  text-align: center;
+  border: none;
+  border: 1px solid darkgray;
+  background-color: transparent;
+}
+
+input:hover {
+  background-color: #ffffff7f;
+}
+input:active,
+input:focus {
+  background-color: white;
+}
+
+
+.repositoryList {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.repositoryList > button {
+  display: block;
+  padding: 0 25px;
+  width: 350px;
+  height: 50px;
+  text-align: left;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+.repoInfo {
+  position: absolute;
+  top: 50px;
+  height: calc(100% - 80px);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.repoInfo p {
+  text-align: center;
+}
+
+
+.release {
+  margin: 10px;
+  box-shadow: 0 0 5px lightgray;
+  padding: 25px;
+}

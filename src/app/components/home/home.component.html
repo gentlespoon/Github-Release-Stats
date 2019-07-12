@@ -1,0 +1,41 @@
+<div class="sideBar">
+
+  <div class="userName">
+    <i class="fab fa-github"></i><br>
+    <input class="githubUsername" type="text" [(ngModel)]="githubUsername" placeholder="GitHub {{ 'username' | translate }}" (change)="usernameChanged()">
+  </div>
+
+  <div class="repository">
+    <div class="repositoryTitle">
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="repoFilterContainer">
+      <input class="repoFilter" type="text" [(ngModel)]="repoFilter" placeholder="{{ 'search' | translate }}">
+    </div>
+    <div class="repositoryList">
+      
+      <button *ngIf="!this.currentUserRepo.length">{{ 'noRepositoryFound' | translate }}</button>
+      <button *ngFor="let repo of filter(this.currentUserRepo)" title="{{ repo['name'] }}" (click)="getRepoInfo(repo['name'])">{{ repo['name'] }}</button>
+    </div>
+  </div>
+
+</div>
+
+
+<div class="repoInfo">
+  <p *ngIf="!this.currentRepoReleases.length">{{ 'noReleaseAvailable' | translate }}</p>
+  <p *ngIf="this.currentRepoReleases.length"><strong>{{ 'downloads' | translate }}</strong>&emsp;{{ this.currentRepoDownloadCount }}</p>
+  <div class="release" *ngFor="let release of this.currentRepoReleases">
+    <p><strong>{{ release['name'] }}</strong></p>
+    <p><strong>{{ 'releasedBy' | translate }}</strong>&emsp;{{ release['author']['login'] }}</p>
+    <p><strong>{{ 'published' | translate }}</strong>&emsp;{{ release['published_at'] }}</p>
+    <p><strong>{{ 'downloads' | translate }}</strong>&emsp;{{ release['download_count'] }}</p>
+    <div style="text-align: center;">
+      <p><strong>{{ 'releasedAssets' | translate }}</strong></p>
+      <div *ngFor="let releasedAsset of release['assets']" style="margin-bottom: 10px;">
+        <a href="{{ releasedAsset['browser_download_url'] }}" target="_blank">{{ releasedAsset['name'] }}</a><br>
+        <strong>{{ 'downloads' | translate }}</strong>&emsp;{{ releasedAsset['download_count'] }}&emsp;|&emsp;<strong>{{ 'lastUpdated' | translate }}</strong>&emsp;{{ releasedAsset['updated_at'] }}
+      </div>
+    </div>
+  </div>
+</div>

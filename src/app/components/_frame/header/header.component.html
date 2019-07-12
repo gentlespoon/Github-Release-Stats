@@ -1,0 +1,13 @@
+
+<div class="header">
+    <button class="header-item brand" href="/">{{ 'appBrand' | translate }}</button>
+
+    <!-- Float right has reversed order -->
+    <!-- <a class="header-item right" href="/user/signup" *ngIf="!sessionService.token.length">Sign Up</a> -->
+    
+    <button class="header-item right" *ngIf="sessionService.token" (click)="sessionService.signOut()">{{ 'signOut' | translate }}</button>
+    <button class="header-item right" *ngIf="sessionService.token" (click)="location.href='https://account.gentlespoon.com/profile'">{{ sessionService.username ? sessionService.username : sessionService.email }}</button>
+
+    <button class="header-item right btn-signIn" *ngIf="!sessionService.token" (click)="sessionService.signIn()">{{ 'signIn' | translate }}</button>
+
+</div>

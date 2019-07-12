@@ -1,0 +1,15 @@
+{
+	"appBrand": "Gs GitHub 發行統計",
+	"downloads": "下載數",
+	"lastUpdated": "最後更新",
+	"noReleaseAvailable": "此repository無可用發行。",
+	"noRepositoryFound": "未找到repository，檢查您的帳戶名。",
+	"published": "發行時間",
+	"releasedAssets": "發行檔案",
+	"releasedBy": "發行者",
+	"search": "搜索",
+	"signIn": "登入 - 可存儲您的GitHub帳戶名",
+	"signOut": "登出",
+	"username": "帳戶名",
+	"usernamePlaceholder": "遊客"
+}

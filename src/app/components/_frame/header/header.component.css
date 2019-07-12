@@ -1,0 +1,30 @@
+.header {
+  height: 50px;
+  background-color: #ddd;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+
+.header > div,
+.header > a,
+.header > button {
+  display: inline-block;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 15px;
+}
+
+.brand {
+  width: 350px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.right {
+  float: right;
+}
+
+.btn-signIn {
+  background-color: #ccc;
+}
